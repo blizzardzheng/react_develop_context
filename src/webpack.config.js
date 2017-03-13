@@ -26,15 +26,14 @@ const config = {
             loaders: ['babel-loader'],
       },
       {
-        test: /\.css?$/,
-        loaders: ['style', 'raw'],
-        include: baseDirPath
-      },
-      {
-        test: /.scss$/,
-        loaders: ["style", "css", "sass"],
-        include: baseDirPath
-      }
+            test: /\.s?css$/,
+             loaders: [
+                'style',
+                'css?camelCase&localIdentName=[local]-[hash:base64:3]&modules',
+                'postcss',
+                'sass'
+            ]
+        }
     ],
   },
   resolve: {
