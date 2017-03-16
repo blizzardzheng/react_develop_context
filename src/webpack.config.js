@@ -6,6 +6,7 @@
 
 const path = require('path');
 require('dotenv').config()
+const autoprefixer = require('autoprefixer');
 const baseDir = process.env.BASEDIR
 const baseDirPath = path.resolve(__dirname, baseDir);
 console.log('current project', baseDirPath)
@@ -28,12 +29,11 @@ const config = {
       {
             test: /\.s?css$/,
              loaders: [
-                'style',
-                'css?camelCase&localIdentName=[local]-[hash:base64:3]&modules',
-                'postcss',
-                'sass'
+                'style-loader',
+                'css-loader?camelCase&localIdentName=[local]-[hash:base64:3]&module',
+                'sass-loader'
             ]
-        }
+      },
     ],
   },
   resolve: {

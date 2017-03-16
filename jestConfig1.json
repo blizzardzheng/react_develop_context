@@ -1,0 +1,28 @@
+{
+    "moduleNameMapper": {
+        "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "a/.jestfilemock.js",
+        "^.+\\.(css|less|scss)$": "identity-obj-proxy",
+        "^common/(.*)": "a/apps/enterprise/common/$1",
+        "^share/(.*)": "a/apps/share/$1"
+    },
+    "testPathDirs": [
+        "a/apps/share"
+    ],
+    "snapshotSerializers": ["a/node_modules/enzyme-to-json/serializer"],
+    "coveragePathIgnorePatterns": [
+        "a/apps/share/module/account/summary/",
+        "a/apps/share/module/account/setting/modals/",
+        "a/apps/share/i18n"
+    ],
+    "coverageThreshold": {
+        "global": {
+            "branches": 46.17,
+            "functions": 62.18,
+            "lines": 58.18,
+            "statements": 57.46
+        }
+    },
+    "globals": {
+        "__DEV__": true
+    }
+}
